@@ -1,0 +1,11 @@
+# curl source
+
+https://curl.haxx.se/download/
+
+# Monitor source release for libcurl
+
+$ CURLVERSION=$(curl -s https://curl.haxx.se/download/ | grep curl- | tail -3 | sed 's/<[^>]*>//g')
+
+echo ${CURLVERSION: : 19}
+
+put the last three entries for https://curl.haxx.se/download/ in an array and match the name against the most recent specfilename
